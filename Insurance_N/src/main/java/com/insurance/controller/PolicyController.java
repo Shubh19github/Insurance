@@ -1,7 +1,10 @@
 package com.insurance.controller;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,14 +27,16 @@ public class PolicyController {
 	@Autowired
 	private PolicyService policyService;
 
-	@PostMapping("/savePolicy")
-	public ResponseEntity<Policy> savePolicy(@RequestBody Policy policy) {
-		
-		Policy policy1=policyService.savePolicy(policy);
-		
-		logger.info("In Rest Controller->savePolicy, Save Policy data");
-		
+
+	@Autowired
+	private PolicyService policyService;
+
+	@PostMapping("/insertData")
+	public ResponseEntity<Policy> updatePolicy(@RequestBody Policy policy) {
+
+		Policy policy1 = policyService.savePolicy(policy);
+
 		return ResponseEntity.ok().body(policy1);
-		
 	}
 }
+

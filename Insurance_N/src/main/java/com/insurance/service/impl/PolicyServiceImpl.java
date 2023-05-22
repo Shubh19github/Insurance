@@ -2,6 +2,7 @@ package com.insurance.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,15 @@ public class PolicyServiceImpl implements PolicyService {
 		// 1st
 		logger.info("In Policy Service Impl>> savePolicy()");
 
+		return policy1;
+	}
+
+	@Autowired
+	private PolicyRepository policyRepository;
+
+	@Override
+	public Policy savePolicy(Policy policy) {
+		Policy policy1 = policyRepository.save(policy);
 		return policy1;
 	}
 
