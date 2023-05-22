@@ -9,5 +9,7 @@ public interface ClaimService {
 	public Claim updateClaim(Claim claim);
 	
 	public Claim getClaimById(Integer id);
+	
+	public void deleteClaim(Integer id);
 
 }

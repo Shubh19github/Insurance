@@ -32,7 +32,7 @@ public class ClaimServiceImpl implements ClaimService {
 	@Override
 	public Claim updateClaim(Claim claim) {
 
-		// 1st
+		// 2nd
 		logger.info("In Claim Service Impl>> updateClaim()");
 
 		Integer integer = claim.getId();
@@ -49,10 +49,21 @@ public class ClaimServiceImpl implements ClaimService {
 	@Override
 	public Claim getClaimById(Integer id) {
 
-		// 1st
+		// 3rd
 		logger.info("In Claim Service Impl>> getClaimByid()");
 
 		Claim claim3 = claimRepository.getClaimById(id);
 		return claim3;
+	}
+
+	@Override
+	public void deleteClaim(Integer id) {
+	
+
+		// 4th
+		logger.info("In Claim Service Impl>> deleteClaimByid()");
+
+		claimRepository.deleteById(id);
+		
 	}
 }

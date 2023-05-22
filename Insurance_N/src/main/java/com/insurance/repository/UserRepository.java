@@ -12,4 +12,6 @@ public interface UserRepository extends CrudRepository<User,Serializable> {
 
 	
 	public User getUserById(Integer Id);
+	
+	public User getNomineeById(Integer Id);
 }

@@ -5,13 +5,11 @@ import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.insurance.model.Premium;
+import com.insurance.model.Nominee;
 
 @Repository
-public interface PremiumRepository extends CrudRepository<Premium, Serializable> {
+public interface NomineeRepository extends CrudRepository<Nominee, Serializable> {
 
-	Premium getPremiumById(Integer id);
-
-	//Premium getPremiumAll();
+	public Nominee getNomineeById(Integer id);
 
 }

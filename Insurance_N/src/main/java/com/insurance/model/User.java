@@ -8,7 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
+/*
+ * @Author Shital 
+ * 
+ */
 @Entity
 @Table(name = "user")
 public class User {
@@ -21,6 +24,9 @@ public class User {
 	private String email;
 	@OneToMany(mappedBy = "userid")
 	private List<Claim> claimList;
+
+	@OneToMany(mappedBy = "userid")
+	private List<Nominee> nomineeList;
 
 	public int getId() {
 		return id;
@@ -62,10 +68,18 @@ public class User {
 		this.claimList = claimList;
 	}
 
+	public List<Nominee> getNomineeList() {
+		return nomineeList;
+	}
+
+	public void setNomineeList(List<Nominee> nomineeList) {
+		this.nomineeList = nomineeList;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", mob=" + mob + ", email=" + email + ", claimList=" + claimList
-				+ "]";
+				+ ", nomineeList=" + nomineeList + "]";
 	}
 
 }
