@@ -7,7 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*
+ * @Author Suraj 
+ * 
+ */
 @Entity
 @Table(name = "policy")
 public class Policy {

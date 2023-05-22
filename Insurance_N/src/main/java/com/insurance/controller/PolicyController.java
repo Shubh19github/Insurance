@@ -1,5 +1,10 @@
 package com.insurance.controller;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +18,15 @@ import com.insurance.service.PolicyService;
 @RestController
 @RequestMapping("/policy")
 public class PolicyController {
+	
+	// create object of logger
+		private static final Logger logger = LoggerFactory.getLogger(ClaimController.class);
+
+
+	
+	@Autowired
+	private PolicyService policyService;
+
 
 	@Autowired
 	private PolicyService policyService;
@@ -25,3 +39,4 @@ public class PolicyController {
 		return ResponseEntity.ok().body(policy1);
 	}
 }
+
