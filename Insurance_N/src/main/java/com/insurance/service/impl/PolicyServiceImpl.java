@@ -17,25 +17,14 @@ public class PolicyServiceImpl implements PolicyService {
 			private static final Logger logger = LoggerFactory.getLogger(ClaimServiceImpl.class);
 
 			// inject repository reference
+	
+
 	@Autowired
 	private PolicyRepository policyRepository;
 
 	@Override
 	public Policy savePolicy(Policy policy) {
-
-		Policy policy1 = policyRepository.save(policy);
-		
-		// 1st
 		logger.info("In Policy Service Impl>> savePolicy()");
-
-		return policy1;
-	}
-
-	@Autowired
-	private PolicyRepository policyRepository;
-
-	@Override
-	public Policy savePolicy(Policy policy) {
 		Policy policy1 = policyRepository.save(policy);
 		return policy1;
 	}
