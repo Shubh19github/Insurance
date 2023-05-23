@@ -6,4 +6,8 @@ public interface PolicyService {
 
 	public Policy savePolicy(Policy policy);
 
+	public void deletePolicy(Integer id);
+
+	public Policy updatePolicy(int id);
+
 }
